@@ -1,0 +1,37 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+
+	for zähler := 1; zähler <= 100; zähler++ {
+		teilerDrei := false
+		teilerFünf := false
+		zählerKopie := zähler
+
+		//Überprüfung Teilbarkeit 3
+		for zählerKopie > 0 {
+			zählerKopie = zählerKopie - 3
+		}
+		teilerDrei = zählerKopie == 0
+
+		//Überprüfung Teilbarkeit 5
+		zählerKopie = zähler
+		for zählerKopie > 0 {
+			zählerKopie = zählerKopie - 5
+		}
+		teilerFünf = zählerKopie == 0
+
+		if teilerDrei && teilerFünf {
+			fmt.Println("Programmieren in Go")
+		} else if teilerDrei {
+			fmt.Println("Programmieren")
+		} else if teilerFünf {
+			fmt.Println("Go")
+		} else {
+			fmt.Println(zähler)
+		}
+	}
+}
